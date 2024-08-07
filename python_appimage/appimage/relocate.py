@@ -257,8 +257,9 @@ def relocate_python(python=None, appdir=None):
         remove_tree(path)
 
     # Add a runtime patch for sys.executable, before site.main() execution
-    log('PATCH', '%s sys.executable', PYTHON_X_Y)
-    set_executable_patch(VERSION, PYTHON_PKG, PREFIX + '/data/_initappimage.py')
+    #log('PATCH', '%s sys.executable', PYTHON_X_Y)
+    #set_executable_patch(VERSION, PYTHON_PKG, PREFIX + '/data/_initappimage.py')
+    log('NOT PATCHED', '%s sys.executable remains untouched', PYTHON_X_Y)
 
     # Set a hook for cleaning sys.path, after site.main() execution
     log('HOOK', '%s sys.path', PYTHON_X_Y)
